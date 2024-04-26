@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.gab.mailsimulator.controller.EmailDetailController">
+    <HBox>
+        <Label text="Remetente:" />
+        <Label fx:id="senderLabel" />
+    </HBox>
+
+    <HBox>
+        <Label text="Assunto:" />
+        <Label fx:id="subjectLabel"/>
+    </HBox>
+
+    <Label fx:id="contentLabel"/>
+</VBox>
+

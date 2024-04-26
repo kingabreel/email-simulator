@@ -7,12 +7,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -32,7 +35,7 @@ public class HelloController {
     @FXML
     public TextField searchBar;
     @FXML
-    public TableView emailTableView;
+    public TableView<Email> emailTableView;
     @FXML
     public VBox mainWindow;
     @FXML
@@ -82,7 +85,7 @@ public class HelloController {
         box.managedProperty().set(!box.managedProperty().get());
     }
 
-    private void userLogged(){
+    private void userLogged() {
         ObservableList<Email> emails = FXCollections.observableArrayList(currentUser.getMainMailList());
 
         emailTableView.setItems(emails);
@@ -96,7 +99,7 @@ public class HelloController {
     public void onSendEmailButtonClicked(ActionEvent actionEvent) {
         String contactName = destinationEmail.getText();
         String anotherContacts = cc.getText();
-        String subject =  emailSubject.getText();
+        String subject = emailSubject.getText();
         String content = emailContent.getText();
 
         String[] contactsArray = anotherContacts.split("\\s+");
@@ -108,13 +111,58 @@ public class HelloController {
         if (user != null) {
             user.getMainMailList().add(email);
 
-            if (user.getMainMailList().get(user.getMainMailList().size()-1) == email) {
-                System.out.println("Email enviado com sucesso!");
+            if (user.getMainMailList().get(user.getMainMailList().size() - 1) == email) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Email sent");
+                alert.setHeaderText(null);
+                alert.setContentText("The email was sucesfully sent");
+                alert.showAndWait();
             }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Check the destination email");
+            alert.showAndWait();
         }
         userLogged();
 
         switchTagAttribute(mainWindow);
         switchTagAttribute(sendEmailBox);
+    }
+
+    @FXML
+    private void onEmailClicked(MouseEvent event) throws IOException {
+        Email selectedEmail = emailTableView.getSelectionModel().getSelectedItem();
+
+        if (selectedEmail != null) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/gab/mailsimulator/emailDetails.fxml"));
+            Scene scene = new Scene(loader.load(), 480, 320);
+            Stage stage = new Stage();
+
+            stage.setTitle(selectedEmail.getSubject());
+            stage.setScene(scene);
+            stage.show();
+
+            EmailDetailController controller = loader.getController();
+            controller.initialize(selectedEmail.getSender(), selectedEmail.getSubject(), selectedEmail.getContent());
+
+        }
+    }
+
+    public void onReturnButtonClicked(ActionEvent actionEvent) {
+        switchTagAttribute(registerBox);
+        switchTagAttribute(loginBox);
+    }
+
+    public void onLogoutButtonClick(ActionEvent actionEvent) {
+        currentUser = null;
+        switchTagAttribute(mainWindow);
+        switchTagAttribute(loginBox);
+    }
+
+    public void onReturnEmailButtonClick(ActionEvent actionEvent) {
+        switchTagAttribute(sendEmailBox);
+        switchTagAttribute(mainWindow);
     }
 }
