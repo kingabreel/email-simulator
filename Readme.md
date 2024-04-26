@@ -38,7 +38,7 @@ This is a mail simulator application that allows users to manage their emails, i
 ## Contributors
 - [Gabriel]
 
-## Application Screenshots
+## Application Screenshots (v1)
 ![Image 1](assets/img.png)
 ---
 ![Image 2](assets/img_1.png)
@@ -48,5 +48,7 @@ This is a mail simulator application that allows users to manage their emails, i
 ![Image 4](assets/img_3.png)
 ---
 ![Image 5](assets/img_4.png)
+---
+![Image 6](assets/img_5.png)
 ---
 This readme is created based on the provided classes and descriptions. Let me know if there's anything else you'd like to add or modify!
