@@ -5,12 +5,36 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.gab.mailsimulator.controller.HelloController">
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
   </padding>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
+  <VBox alignment="CENTER" fx:id="loginBox">
+    <Label text="Welcome"/>
+    <Label text="Email"/>
+    <TextField fx:id="emailBox"/>
+
+    <Label text="Password"/>
+    <TextField fx:id="passwordBox"/>
+    <HBox alignment="CENTER">
+      <Button text="Sign up" onAction="#onRegisterButtonClick"/>
+      <Button text="Login" onAction="#onLoginButtonClick"/>
+    </HBox>
+  </VBox>
+
+  <VBox alignment="CENTER" fx:id="registerBox" managed="false" visible="false">
+    <Label text="Email"/>
+    <TextField fx:id="emailRegisterBox"/>
+    <Label text="Password"/>
+    <TextField fx:id="passwordRegisterBox"/>
+    <Label text="username"/>
+    <TextField fx:id="usernameRegisterBox"/>
+
+    <Button text="Sign up" onAction="#onRegisterConcluded"/>
+  </VBox>
+
 </VBox>
