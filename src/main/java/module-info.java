@@ -8,5 +8,8 @@ module com.gab.mailsimulator {
     opens com.gab.mailsimulator to javafx.fxml;
     exports com.gab.mailsimulator;
     exports com.gab.mailsimulator.controller;
+    exports com.gab.mailsimulator.view;
+    opens com.gab.mailsimulator.model to javafx.base;
     opens com.gab.mailsimulator.controller to javafx.fxml;
+
 }

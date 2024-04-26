@@ -7,6 +7,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TextArea?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.gab.mailsimulator.controller.HelloController">
   <padding>
@@ -37,4 +41,47 @@
     <Button text="Sign up" onAction="#onRegisterConcluded"/>
   </VBox>
 
+  <VBox alignment="CENTER" fx:id="mainWindow" managed="false" visible="false">
+    <HBox alignment="CENTER">
+      <Label fx:id="username"/>
+      <TextField fx:id="searchBar"/>
+      <Button text="New Email" onAction="#onNewEmailButtonClick"/>
+    </HBox>
+
+    <TableView fx:id="emailTableView" VBox.vgrow="ALWAYS">
+      <columns>
+        <TableColumn text="Sender" prefWidth="150">
+          <cellValueFactory>
+            <PropertyValueFactory property="sender"/>
+          </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Subject" prefWidth="250">
+          <cellValueFactory>
+            <PropertyValueFactory property="subject"/>
+          </cellValueFactory>
+        </TableColumn>
+      </columns>
+    </TableView>
+  </VBox>
+
+  <VBox fx:id="sendEmailBox" managed="false" visible="false">
+    <HBox>
+      <Label text="To"/>
+      <TextField fx:id="destinationEmail"/>
+    </HBox>
+
+    <HBox>
+      <Label text="Cc"/>
+      <TextField fx:id="cc"/>
+    </HBox>
+
+    <HBox>
+      <Label text="Subject"/>
+      <TextField fx:id="emailSubject"/>
+    </HBox>
+
+    <TextArea fx:id="emailContent"/>
+
+    <Button text="sendButton" onAction="#onSendEmailButtonClicked"/>
+  </VBox>
 </VBox>

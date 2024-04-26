@@ -1,5 +1,6 @@
 package com.gab.mailsimulator.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -21,7 +22,12 @@ public class User {
         this.contacts = contacts;
     }
 
-    public User (){}
+    public User (){
+        mainMailList = new ArrayList<>();
+        spamMailList = new ArrayList<>();
+        trashMailList = new ArrayList<>();
+        contacts = new ArrayList<>();
+    }
 
     public String getUsername() {
         return username;

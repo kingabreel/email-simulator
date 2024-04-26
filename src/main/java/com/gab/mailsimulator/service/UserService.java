@@ -18,6 +18,10 @@ public class UserService {
         return false;
     }
 
+    public User getUser(String email) {
+        return userRepository.getUser(email);
+    }
+
     public void addUser(String mail, String password, String username) {
         User user = new User();
         user.setUserMail(mail);
