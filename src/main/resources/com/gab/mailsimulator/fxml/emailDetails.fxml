@@ -6,12 +6,12 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml" fx:controller="com.gab.mailsimulator.controller.EmailDetailController">
     <HBox>
-        <Label text="Remetente:" />
+        <Label text="Sender:" />
         <Label fx:id="senderLabel" />
     </HBox>
 
     <HBox>
-        <Label text="Assunto:" />
+        <Label text="Subject:" />
         <Label fx:id="subjectLabel"/>
     </HBox>
 
