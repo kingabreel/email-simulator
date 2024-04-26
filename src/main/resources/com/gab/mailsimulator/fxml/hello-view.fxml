@@ -25,7 +25,8 @@
 
     <Label text="Password"/>
     <PasswordField fx:id="passwordBox"/>
-    <HBox alignment="CENTER">
+
+    <HBox alignment="CENTER" spacing="30">
       <Button text="Sign up" onAction="#onRegisterButtonClick"/>
       <Button text="Login" onAction="#onLoginButtonClick"/>
     </HBox>
@@ -39,14 +40,14 @@
     <Label text="username"/>
     <TextField fx:id="usernameRegisterBox"/>
 
-    <HBox alignment="CENTER">
+    <HBox alignment="CENTER" spacing="20">
       <Button text="Return" onAction="#onReturnButtonClicked"/>
       <Button text="Sign up" onAction="#onRegisterConcluded"/>
     </HBox>
   </VBox>
 
   <VBox alignment="CENTER" fx:id="mainWindow" managed="false" visible="false">
-    <HBox alignment="CENTER">
+    <HBox alignment="CENTER" spacing="30">
       <Button text="Exit" onAction="#onLogoutButtonClick"/>
       <Label fx:id="username"/>
       <TextField fx:id="searchBar"/>
@@ -71,17 +72,17 @@
 
   <VBox fx:id="sendEmailBox" managed="false" visible="false">
     <Button text="Return" onAction="#onReturnEmailButtonClick"/>
-    <HBox>
+    <HBox spacing="10">
       <Label text="To"/>
       <TextField fx:id="destinationEmail"/>
     </HBox>
 
-    <HBox>
+    <HBox spacing="10">
       <Label text="Cc"/>
       <TextField fx:id="cc"/>
     </HBox>
 
-    <HBox>
+    <HBox spacing="10">
       <Label text="Subject"/>
       <TextField fx:id="emailSubject"/>
     </HBox>

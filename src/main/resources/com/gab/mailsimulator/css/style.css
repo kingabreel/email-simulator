@@ -1,0 +1,59 @@
+.root {
+    -fx-background-color: white;
+}
+
+.label {
+    -fx-text-fill: darkblue;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: darkblue;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+.text-area {
+    -fx-background-color: white;
+    -fx-border-color: darkblue;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+.button {
+    -fx-background-color: orange;
+    -fx-text-fill: white;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+}
+
+.table-view {
+    -fx-background-color: white;
+}
+
+.table-column {
+    -fx-background-color: white;
+    -fx-text-fill: darkblue;
+    -fx-border-color: darkblue;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+.password-field {
+    -fx-background-color: white;
+    -fx-border-color: darkblue;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+.hbox {
+    -fx-background-color: black;
+}

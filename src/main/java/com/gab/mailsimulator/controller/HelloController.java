@@ -8,7 +8,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -136,8 +135,9 @@ public class HelloController {
         Email selectedEmail = emailTableView.getSelectionModel().getSelectedItem();
 
         if (selectedEmail != null) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/gab/mailsimulator/emailDetails.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/gab/mailsimulator/fxml/emailDetails.fxml"));
             Scene scene = new Scene(loader.load(), 480, 320);
+            scene.getStylesheets().add(getClass().getResource("/com/gab/mailsimulator/css/mailStyle.css").toExternalForm());
             Stage stage = new Stage();
 
             stage.setTitle(selectedEmail.getSubject());

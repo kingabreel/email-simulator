@@ -1,0 +1,20 @@
+VBox {
+    -fx-padding: 20px;
+    -fx-spacing: 10px;
+    -fx-background-color: #f0f0f0;
+}
+
+HBox {
+    -fx-spacing: 5px;
+}
+
+Label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+#contentLabel {
+    -fx-wrap-text: true;
+    -fx-font-size: 12px;
+    -fx-background-color: gray;
+}
