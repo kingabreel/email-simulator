@@ -25,7 +25,7 @@ public class HelloController {
     @FXML
     public TextField emailRegisterBox;
     @FXML
-    public TextField passwordRegisterBox;
+    public PasswordField passwordRegisterBox;
     @FXML
     public TextField usernameRegisterBox;
     @FXML
@@ -50,7 +50,7 @@ public class HelloController {
     @FXML
     public TextField emailBox;
     @FXML
-    public TextField passwordBox;
+    public PasswordField passwordBox;
     private User currentUser;
 
     @FXML

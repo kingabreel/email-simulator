@@ -12,6 +12,7 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.control.TextArea?>
 
+<?import javafx.scene.control.PasswordField?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.gab.mailsimulator.controller.HelloController">
   <padding>
@@ -23,7 +24,7 @@
     <TextField fx:id="emailBox"/>
 
     <Label text="Password"/>
-    <TextField fx:id="passwordBox"/>
+    <PasswordField fx:id="passwordBox"/>
     <HBox alignment="CENTER">
       <Button text="Sign up" onAction="#onRegisterButtonClick"/>
       <Button text="Login" onAction="#onLoginButtonClick"/>
@@ -34,7 +35,7 @@
     <Label text="Email"/>
     <TextField fx:id="emailRegisterBox"/>
     <Label text="Password"/>
-    <TextField fx:id="passwordRegisterBox"/>
+    <PasswordField fx:id="passwordRegisterBox"/>
     <Label text="username"/>
     <TextField fx:id="usernameRegisterBox"/>
 
